@@ -1,7 +1,7 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
-import { Route,Routes,Link } from "react-router-dom";
+import { Route,Routes} from "react-router-dom";
 import Dashboard from './pages/Dashboard';
 import Footer from './pages/Footer';
 import NotFound from './pages/NotFound';
@@ -17,7 +17,6 @@ function App() {
     <div className="App">
         <ToastContainer position='top-center'/>
         <Header/>
-{/* ghg */}
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -26,7 +25,6 @@ function App() {
         <Route path="/view/:id" element={<View />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-
       <Footer/>
    
 

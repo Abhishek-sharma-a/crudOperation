@@ -2,18 +2,18 @@ import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { useParams,  useNavigate } from "react-router-dom";
 import "./addEdit.css";
 import axios from "axios";
-import { toast } from "react-toastify";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const initial={
   email: "",
   password: "",
 }
 
 const Home = () => {
-
+ 
   const [stat, setStat] = useState(initial);
   const {email,password } = stat;
   const navegate = useNavigate();
@@ -26,6 +26,7 @@ const Home = () => {
   const token = localStorage.getItem("token");
   const handleSubmit = async(e) => {
     e.preventDefault()
+
     const response = await axios.post("http://localhost:5000/login", {
       email,
       password,
@@ -42,7 +43,8 @@ const Home = () => {
 }, [handleSubmit])
   return (
 <>
-<div className="container">
+
+<div className="container" style={{ marginTop: "100px", height:"60vh" }}>
 <Form className='col-md-4 mx-auto my-5'>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>

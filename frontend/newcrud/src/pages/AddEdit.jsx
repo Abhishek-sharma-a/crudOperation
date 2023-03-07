@@ -65,7 +65,7 @@ const AddEdit = () => {
     setState({ ...state, [name]: value });
   };
   return (
-    <div style={{ marginTop: "100px" }}>
+    <div style={{ marginTop: "100px", height:"80vh" }}>
       <form
         style={{
           margin: "auto",
@@ -102,15 +102,15 @@ const AddEdit = () => {
           value={contact || ""}
           onChange={handleInputChange}
         />
-        <label htmlFor="password">Password</label>
-        <input
+        {!id ?<label htmlFor="password">Password</label>:null}
+        {!id ? <input
           type="text"
           id="password"
           name="password"
           placeholder="password..."
           value={password || ""}
           onChange={handleInputChange}
-        />
+        />:null}
         <input type="submit" value={id ? "update" : "Save"} />
         <br />
         <br />
